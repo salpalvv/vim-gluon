@@ -32,20 +32,20 @@ hi def link gluonShebang        Comment
 hi def link gluonOperator       Operator
 hi def link gluonArrow          Operator
 
-" Integers
-syn match gluonDecimalInt       "\<-\=\d\+\%([Ee][-+]\=\d\+\)\=\>"
-syn match gluonHexadecimalInt   "\<-\=0[xX]\x\+\>"
-syn match glOctalInt            "\<-\=0\o\+\>"
+syn match gluonSeparator        "[,;:]"
+syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")"
+syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]"
+syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}"
 
-hi def link gluonDecimalInt     Integer
-hi def link gluonHexadecimalInt Integer
-hi def link gluonOctalInt       Integer
+hi def link gluonSeparator      Delimiter
+hi def link gluonDelimiter      Delimiter
+
+" Numbers
+syn match gluonNumber "\<[0-9]\+\>\|\<0[xX][0-9a-fA-F]\+\>\|\<0[oO][0-7]\+\>\|\<0[bB][10]\+\>"
+syn match gluonFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
+
 hi def link Integer             Number
-
-" Floating point
-syn match gluonFloat            "\<-\=\d\+\.\d*\%([Ee][-+]\=\d\+\)\=\>"
-syn match gluonFloat            "\<-\=\.\d\+\%([Ee][-+]\=\d\+\)\=\>"
-
+hi def link gluonNumber         Number
 hi def link gluonFloat          Float
 
 " Strings
