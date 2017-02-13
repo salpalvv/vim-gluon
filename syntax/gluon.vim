@@ -11,7 +11,8 @@ endif
 syn keyword gluonConditional    match if else with then import
 syn keyword gluonTypeDef        type
 syn keyword gluonKeyword        let in and
-syn keyword gluonType           Int Float String Ref Option
+syn keyword gluonType           Int Float String Ref
+syn keyword gluonType           Option Result Ordering
 syn keyword gluonBoolean        True False
 syn keyword gluonTodo contained TODO FIXME NOTE
 
