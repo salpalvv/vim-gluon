@@ -8,7 +8,7 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword gluonConditional    match if else with then
+syn keyword gluonConditional    match if else with then import
 syn keyword gluonTypeDef        type
 syn keyword gluonKeyword        let in and
 syn keyword gluonType           Int Float String Ref Option
@@ -25,14 +25,18 @@ hi def link gluonTodo           Todo
 syn match gluonEscape           display contained /\\\([nrt0\\'"]\|x\x\{2}\)/
 syn match gluonStringContinuation display contained /\\\n\s*/
 syn match gluonShebang          /\%^#![^[].*/
-syn match gluonOperator         display "&&\|||"
-syn match gluonArrow            display "->"
+syn match gluonOperator        "\v\*"
+syn match gluonOperator        "\v/"
+syn match gluonOperator        "\v\+"
+syn match gluonOperator        "\v-"
+syn match gluonOperator        "\v\?"
+syn match gluonOperator        "\v->"
+syn match gluonOperator        "\v\="
 
 hi def link gluonShebang        Comment
 hi def link gluonOperator       Operator
-hi def link gluonArrow          Operator
 
-syn match gluonSeparator        "[,;:]"
+syn match gluonSeparator        "[,;:|]"
 syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")"
 syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]"
 syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}"
@@ -41,12 +45,15 @@ hi def link gluonSeparator      Delimiter
 hi def link gluonDelimiter      Delimiter
 
 " Numbers
-syn match gluonNumber "\<[0-9]\+\>\|\<0[xX][0-9a-fA-F]\+\>\|\<0[oO][0-7]\+\>\|\<0[bB][10]\+\>"
-syn match gluonFloat "\<[0-9]\+\.[0-9]\+\([eE][-+]\=[0-9]\+\)\=\>"
+syntax match gluonNumber        "\v<\d+>"
+syntax match gluonNumber        "\v<\d+\.\d+>"
+syntax match gluonNumber        "\v<\d*\.?\d+([Ee]-?)?\d+>"
+syntax match gluonNumber        "\v<0x\x+([Pp]-?)?\x+>"
+syntax match gluonNumber        "\v<0b[01]+>"
+syntax match gluonNumber        "\v<0o\o+>"
 
 hi def link Integer             Number
 hi def link gluonNumber         Number
-hi def link gluonFloat          Float
 
 " Strings
 syn region gluonString          start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=gluonEscape,gluonStringContinuation,@Spell
