@@ -2,7 +2,11 @@
 
 ## Description
 
-This is a vim plugin that provides [gluon][g] syntax highlighting (more to come)
+This is a vim plugin that provides [gluon][g] with 
+* syntax highlighting
+* indentation 
+
+(more to come)
 
 ## Installation
 
@@ -14,11 +18,17 @@ git clone --depth=1 https://github.com/salpalvv/vim-gluon.git ~/.vim/bundle/rust
 
 ## Features
 
-Just syntax highlighting for now
+syntax highlighting  
+indentation
 
 ## License
 
 MIT
+
+## Contributing
+
+add an issue if you want to see something or if there is a bug  
+fork and create a PR if you want to add something
 
 [g]: https://github.com/gluon-lang/gluon
 [v]: https://github.com/gmarik/vundle
