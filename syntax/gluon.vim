@@ -31,7 +31,7 @@ syn match gluonOperator        "\v/"
 syn match gluonOperator        "\v\+"
 syn match gluonOperator        "\v-"
 syn match gluonOperator        "\v\?"
-syn match gluonOperator        "\v->"
+syn match gluonOperator        "\->"
 syn match gluonOperator        "\v\="
 
 hi def link gluonShebang        Comment
