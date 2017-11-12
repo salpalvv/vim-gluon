@@ -38,9 +38,9 @@ hi def link gluonShebang        Comment
 hi def link gluonOperator       Operator
 
 syn match gluonSeparator        "[,;:|]"
-syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")" contains=gluonString,gluonOperator,gluonNumber,@Spell
-syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]" contains=gluonString,gluonOperator,gluonNumber,@Spell
-syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}" contains=gluonString,gluonOperator,gluonNumber,@Spell
+syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")" transparent
+syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]" transparent
+syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}" transparent
 
 hi def link gluonSeparator      Delimiter
 hi def link gluonDelimiter      Delimiter
