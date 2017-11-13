@@ -8,7 +8,7 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword gluonConditional    match if else with then import
+syn keyword gluonConditional    match if else with then
 syn keyword gluonTypeDef        type
 syn keyword gluonKeyword        let in and
 syn keyword gluonBoolean        True False
@@ -19,6 +19,10 @@ hi def link gluonTypeDef        Identifier
 hi def link gluonKeyword        Keyword
 hi def link gluonBoolean        Boolean
 hi def link gluonTodo           Todo
+
+syn match gluonMacro            "\w\+!"
+
+hi def link gluonMacro          Macro
 
 syn match gluonType             "\<[A-Z][A-Za-z_]*\>"
 
