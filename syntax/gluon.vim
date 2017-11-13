@@ -26,18 +26,12 @@ hi def link gluonTodo           Todo
 syn match gluonEscape           display contained /\\\([nrt0\\'"]\|x\x\{2}\)/
 syn match gluonStringContinuation display contained /\\\n\s*/
 syn match gluonShebang          /\%^#![^[].*/
-syn match gluonOperator        "\v\*"
-syn match gluonOperator        "\v/"
-syn match gluonOperator        "\v\+"
-syn match gluonOperator        "\v-"
-syn match gluonOperator        "\v\?"
-syn match gluonOperator        "\->"
-syn match gluonOperator        "\v\="
+syn match gluonOperator        "[#+-/&|=<>:.\*]\+"
 
 hi def link gluonShebang        Comment
 hi def link gluonOperator       Operator
 
-syn match gluonSeparator        "[,;:|]"
+syn match gluonSeparator        "|"
 syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")" transparent
 syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]" transparent
 syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}" transparent
