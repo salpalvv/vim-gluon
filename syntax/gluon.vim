@@ -8,39 +8,38 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword gluonConditional    match if else with then import
+syn keyword gluonConditional    match if else with then
 syn keyword gluonTypeDef        type
 syn keyword gluonKeyword        let in and
-syn keyword gluonType           Int Float String Ref
-syn keyword gluonType           Option Result Ordering
 syn keyword gluonBoolean        True False
 syn keyword gluonTodo contained TODO FIXME NOTE
 
 hi def link gluonConditional    Conditional
 hi def link gluonTypeDef        Identifier
 hi def link gluonKeyword        Keyword
-hi def link gluonType           Type
 hi def link gluonBoolean        Boolean
 hi def link gluonTodo           Todo
+
+syn match gluonMacro            "\w\+!"
+
+hi def link gluonMacro          Macro
+
+syn match gluonType             "\<[A-Z][A-Za-z_]*\>"
+
+hi def link gluonType           Type
 
 syn match gluonEscape           display contained /\\\([nrt0\\'"]\|x\x\{2}\)/
 syn match gluonStringContinuation display contained /\\\n\s*/
 syn match gluonShebang          /\%^#![^[].*/
-syn match gluonOperator        "\v\*"
-syn match gluonOperator        "\v/"
-syn match gluonOperator        "\v\+"
-syn match gluonOperator        "\v-"
-syn match gluonOperator        "\v\?"
-syn match gluonOperator        "\v->"
-syn match gluonOperator        "\v\="
+syn match gluonOperator        "[#+-/&|=<>:.\*]\+"
 
 hi def link gluonShebang        Comment
 hi def link gluonOperator       Operator
 
-syn match gluonSeparator        "[,;:|]"
-syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")" contains=gluonString,gluonOperator,gluonNumber,@Spell
-syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]" contains=gluonString,gluonOperator,gluonNumber,@Spell
-syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}" contains=gluonString,gluonOperator,gluonNumber,@Spell
+syn match gluonSeparator        "|"
+syn region gluonParens          matchgroup=gluonDelimiter start="(" end=")" transparent
+syn region gluonBrackets        matchgroup=gluonDelimiter start="\[" end="]" transparent
+syn region gluonBlock           matchgroup=gluonDelimiter start="{" end="}" transparent
 
 hi def link gluonSeparator      Delimiter
 hi def link gluonDelimiter      Delimiter
